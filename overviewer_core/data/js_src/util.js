@@ -339,7 +339,11 @@ overviewer.util = {
         overviewer.current_world = overviewerConfig.worlds[0];
 
         //myLayer.addTo(overviewer.map);
-        overviewer.map.setView(overviewer.util.fromWorldToLatLng(tset.spawn[0], tset.spawn[1], tset.spawn[2], tset), 1);
+        if (typeof(tset.spawn) == "object") {        
+            overviewer.map.setView(overviewer.util.fromWorldToLatLng(tset.spawn[0], tset.spawn[1], tset.spawn[2], tset), 1);
+        } else {
+            overviewer.map.setView(overviewer.util.fromWorldToLatLng(0, 0, 0, tset), 1);
+        }
 
         if (!overviewer.util.initHash()) {
             overviewer.worldCtrl.onChange({target: {value: overviewer.current_world}});
