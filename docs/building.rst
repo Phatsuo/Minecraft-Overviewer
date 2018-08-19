@@ -51,7 +51,7 @@ You will need the following:
 - The Numpy Extension for Python.
 - The extensions can be installed via::
 
-    c:\python27\python.exe -m pip -U numpy pillow
+    c:\python27\python.exe -m pip install -U numpy pillow
 
 
 Building with Visual Studio
@@ -112,7 +112,7 @@ Building with mingw
 
 1. Open a MinGW shell.
 2. cd to the Overviewer directory.
-3. Copy Imaging.h and ImPlatform.h from your Pillow sources into the current working directory.
+3. Copy Imaging.h, ImagingUtils.h and ImPlatform.h from your Pillow sources into the current working directory.
 4. Build::
 
     python setup.py build --compiler=mingw32
